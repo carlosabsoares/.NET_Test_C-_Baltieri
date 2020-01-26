@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
+using Flunt.Validations;
+using Store.Domain.Enums;
 
 namespace Store.Domain.Entities
 {
@@ -9,8 +12,15 @@ namespace Store.Domain.Entities
 
         public Customer(string name, string email)
         {
-            name = name;
-            email = email;
+            AddNotifications(
+                new Contract()
+                    .Requires()
+                    .IsNotNull(name, "Custumer", "O nome deve ser informado")
+                    .IsNotNull(email, "Custumer", "email deve ser informado")
+            );
+
+            Name = name;
+            Email = email;
         }
 
         public string Name { get; set; }

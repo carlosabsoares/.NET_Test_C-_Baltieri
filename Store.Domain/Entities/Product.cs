@@ -15,6 +15,14 @@ namespace Store.Domain.Entities
         public Product(string title, decimal price, bool active)
         {
 
+            AddNotifications(
+                new Contract()
+                    .Requires()
+                    .IsNotNull(active, "Active", "Produto tem que ter status")
+                    .IsNotNull(title, "Title", "Produto tem que ter Título")
+            );
+
+
             Title = title;
             Price = price;
             Active = active;
