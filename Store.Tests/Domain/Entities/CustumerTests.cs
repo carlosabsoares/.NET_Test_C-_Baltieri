@@ -35,11 +35,13 @@ namespace Store.Tests.Domain.Entities
 
             var _customer = new Customer(_nome, _email);
 
-            if (_customer.Notifications != null)
-            {
-                return;
-            }
-            Assert.AreEqual(_customer.Name, _nome);
+            Assert.AreEqual(_customer.Valid, false);
+
+            //if (_customer.Notifications != null)
+            //{
+            //    return;
+            //}
+            //Assert.AreEqual(_customer.Name, _nome);
 
         }
 
@@ -52,11 +54,13 @@ namespace Store.Tests.Domain.Entities
 
             var _customer = new Customer(_nome, _email);
 
-            if (_customer.Notifications != null)
-            {
-                return;
-            }
-            Assert.AreEqual(_customer.Name, _nome);
+            Assert.AreEqual(_customer.Valid, false)
+
+            //if (_customer.Notifications != null)
+            //{
+            //    return;
+            //}
+            //Assert.AreEqual(_customer.Name, _nome);
         }
 
         [TestMethod]
@@ -68,11 +72,13 @@ namespace Store.Tests.Domain.Entities
 
             var _customer = new Customer(_nome, _email);
 
-            if (_customer.Notifications != null)
-            {
-                return;
-            }
-            Assert.AreEqual(_customer.Name, _nome);
+            Assert.AreEqual(_customer.Valid, false);
+
+            //if (_customer.Notifications != null)
+            //{
+            //    return;
+            //}
+            //Assert.AreEqual(_customer.Name, _nome);
         }
     }
 }

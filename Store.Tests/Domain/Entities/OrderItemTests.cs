@@ -36,9 +36,11 @@ namespace Store.Tests.Domain.Entities
 
             var ordemItem = new OrderItem(_product, quantidade);
 
-            if (ordemItem.Notifications != null)
-                return;
-            
+            Assert.AreEqual(ordemItem.Valid, false);
+
+            //if (ordemItem.Notifications != null)
+            //    return;
+
         }
 
         [TestMethod]
@@ -50,8 +52,10 @@ namespace Store.Tests.Domain.Entities
 
             var ordemItem = new OrderItem(_product, quantidade);
 
-            if (ordemItem.Notifications != null)
-                return;
+            Assert.AreEqual(ordemItem.Valid, false);
+
+            //if (ordemItem.Notifications != null)
+            //    return;
         }
 
         [TestMethod]

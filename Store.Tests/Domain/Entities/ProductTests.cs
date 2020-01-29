@@ -38,10 +38,12 @@ namespace Store.Tests.Domain.Entities
 
             var _product = new Product(_nome, _preco, _active);
 
-            if (_product.Notifications != null)
-            {
-                return;
-            }
+            Assert.AreEqual(_product.Valid, false);
+
+            //if (_product.Notifications != null)
+            //{
+            //    return;
+            //}
 
         }
 
@@ -55,10 +57,12 @@ namespace Store.Tests.Domain.Entities
 
             var _product = new Product(_nome, _preco, _active);
 
-            if (_product.Notifications != null)
-            {
-                return;
-            }
+            Assert.AreEqual(_product.Valid, false);
+
+            //if (_product.Notifications != null)
+            //{
+            //    return;
+            //}
 
         }
 
