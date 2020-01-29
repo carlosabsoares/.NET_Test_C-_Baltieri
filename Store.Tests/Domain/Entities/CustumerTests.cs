@@ -54,7 +54,7 @@ namespace Store.Tests.Domain.Entities
 
             var _customer = new Customer(_nome, _email);
 
-            Assert.AreEqual(_customer.Valid, false)
+            Assert.AreEqual(_customer.Valid, false);
 
             //if (_customer.Notifications != null)
             //{

@@ -31,12 +31,12 @@ namespace Store.Tests.Domain.Entities
         {
             var order = new Order(_customer, 0, null);
 
-            //var order = new Order(null, 0, null);
+            //if (order.Notifications != null)
+            //{
+            //    return;
+            //}
 
-            if (order.Notifications != null)
-            {
-                return;
-            }
+            Assert.AreEqual(_customer.Valid, true);
 
             Assert.AreEqual(order.Status, EOrderStatus.WaitingPayment);
 
@@ -105,7 +105,11 @@ namespace Store.Tests.Domain.Entities
         {
             var order = new Order(_customer, 10, null);
             order.AddItem(_product, 5);
+
             Assert.AreEqual(order.Total(), 60);
+            Assert.AreEqual(order.Date.Date, DateTime.Now.Date);
+            Assert.AreEqual(order.Customer, _customer);
+
         }
 
         [TestMethod]
