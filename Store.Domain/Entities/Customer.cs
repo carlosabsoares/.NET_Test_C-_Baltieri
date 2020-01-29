@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using Flunt.Validations;
 using Store.Domain.Enums;
+using Store.Domain.Repositories.Interfaces;
 
 namespace Store.Domain.Entities
 {
@@ -21,6 +22,7 @@ namespace Store.Domain.Entities
 
             Name = name;
             Email = email;
+
         }
 
         public string Name { get; set; }
